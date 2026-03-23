@@ -15,6 +15,7 @@ public class LongSumTest extends BaseTest {
 
     @Test(dataProvider = "sumLongData", groups = {"smoke"})
     public void testSumLong(long a, long b, long expected) {
-        Assert.assertEquals(calculator.sum(a, b), expected);
+        Assert.assertEquals(calculator.sum(a, b), expected, "Expected result for addition " + a
+                + " and " + b + " is wrong");
     }
 }

@@ -19,13 +19,9 @@ public class DoubleDivTest extends BaseTest {
         Assert.assertEquals(calculator.div(a, b), expected, 0.0001);
     }
 
-    /*
-    !!!
-     */
     @Test(groups = "regression")
     public void testDivDoubleByZero() {
-        Assert.assertTrue(Double.isInfinite(calculator.div(12.0D, 0.0D)));
-        System.out.println("double division by zero returns Infinity,\n" +
-                "unlike long division which throws NumberFormatException");
+        double expected = calculator.div(12.0D, 0.0D);
+        Assert.assertTrue(Double.isInfinite(expected), "Expected result isn`t infinite: " + expected);
     }
 }

@@ -15,6 +15,7 @@ public class DoubleSubTest extends BaseTest {
 
     @Test(dataProvider = "subDoubleData", groups = "smoke")
     public void testSubDouble(double a, double b, double expected) {
-        Assert.assertEquals(calculator.sub(a, b), expected, 0.0001);
+        Assert.assertEquals(calculator.sub(a, b), expected, 0.0001, "Expected result for subtraction " + a
+                + " and " + b + " is wrong" );
     }
 }

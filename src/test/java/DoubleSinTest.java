@@ -17,6 +17,7 @@ public class DoubleSinTest extends BaseTest{
 
     @Test(dataProvider = "sinDoubleData", groups = "regression")
     public void testSinDouble(double a, double expected) {
-        Assert.assertEquals(calculator.sin(a), expected, 0.0001);
+        Assert.assertEquals(calculator.sin(a), expected, 0.0001, "Sin for " + Math.ceil(Math.toDegrees(a))
+                + "° is wrong");
     }
 }

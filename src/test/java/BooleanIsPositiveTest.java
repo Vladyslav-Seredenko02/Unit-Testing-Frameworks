@@ -16,6 +16,6 @@ public class BooleanIsPositiveTest extends BaseTest{
 
     @Test(dataProvider = "isPositiveData", groups = "smoke")
     public void testIsPositive(long value, boolean expected) {
-        Assert.assertEquals(calculator.isPositive(value), expected);
+        Assert.assertEquals(calculator.isPositive(value), expected, "Value " + value + " isn`t positive");
     }
 }

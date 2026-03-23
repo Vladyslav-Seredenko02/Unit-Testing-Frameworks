@@ -15,6 +15,7 @@ public class LongSubTest extends BaseTest{
 
     @Test(dataProvider = "subLongData")
     public void testSubLong(long a, long b, long expected) {
-        Assert.assertEquals(calculator.sub(a, b), expected);
+        Assert.assertEquals(calculator.sub(a, b), expected, "Expected result for subtraction " + a
+                + " and " + b + " is wrong");
     }
 }

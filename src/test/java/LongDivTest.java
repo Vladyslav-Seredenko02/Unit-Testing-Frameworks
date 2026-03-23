@@ -19,14 +19,13 @@ public class LongDivTest extends BaseTest {
         Assert.assertEquals(calculator.div(a, b), expected);
     }
 
-    @Test(expectedExceptions = NumberFormatException.class, groups = "smoke")
+    //This can also be done using annotation "expectedExceptions = NumberFormatException.class"
+    //But I decided to implement this using Assert.expectThrows() for having custom message in the logs
+    @Test(groups = "smoke")
     public void testDivLongByZero() {
-        calculator.div(30L, 0L);
-//        try {
-//            calculator.div(30L, 0L);
-//        } catch (Exception e) {
-//            System.out.println("Caught exception: " + e.getClass());
-//            throw e;
-//        }
+        Assert.expectThrows(
+                "NumberFormatException wasn`t thrown", NumberFormatException.class,
+                () -> calculator.div(30L, 0L)
+        );
     }
 }

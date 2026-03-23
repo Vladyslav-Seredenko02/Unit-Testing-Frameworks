@@ -16,6 +16,7 @@ public class LongMultTest extends BaseTest {
 
     @Test(dataProvider = "multLongData", groups = "smoke")
     public void testmultLong(long a, long b, long expected) {
-        Assert.assertEquals(calculator.mult(a, b), expected);
+        Assert.assertEquals(calculator.mult(a, b), expected, "Expected result for multiplying " + a
+                + " and " + b + " is wrong");
     }
 }

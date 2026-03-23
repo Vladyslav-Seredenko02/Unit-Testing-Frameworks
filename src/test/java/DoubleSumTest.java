@@ -16,6 +16,7 @@ public class DoubleSumTest extends BaseTest {
 
     @Test(dataProvider = "sumDoubleData", groups = "regression")
     public void testSumDouble(double a, double b, double expected) {
-        Assert.assertEquals(calculator.sum(a, b), expected, 0.0001);
+        Assert.assertEquals(calculator.sum(a, b), expected, 0.0001, "Expected result for addition " + a
+                + " and " + b + " is wrong");
     }
 }

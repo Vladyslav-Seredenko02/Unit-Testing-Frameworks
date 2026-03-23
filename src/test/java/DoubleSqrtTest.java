@@ -17,6 +17,7 @@ public class DoubleSqrtTest extends BaseTest {
 
     @Test(dataProvider = "sqrtDoubleData", groups = "regression")
     public void testSqrtDouble(double a, double expected) {
-        Assert.assertEquals(calculator.sqrt(a), expected, 0.0001);
+        Assert.assertEquals(calculator.sqrt(a), expected, 0.0001, "Sqrt for " + a
+                + " is wrong");
     }
 }
